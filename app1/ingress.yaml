@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app1
+  annotations:
+    #nginx.ingress.kubernetes.io/rewrite-target: /
+    #kubernetes.io/ingress.class: traefik
+  namespace: default
+spec:
+  #ingressClassName: nginx-example
+  rules:
+  - host: app1.k8.odion.network
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80
