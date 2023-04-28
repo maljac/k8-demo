@@ -10,7 +10,7 @@ spec:
       - name: one
         image: nginx:latest
       - name: two
-        image: nginx:2.0
+        image: httpd:alpine
   template:
     metadata:
       name: 'app-{{name}}'
