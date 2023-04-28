@@ -16,6 +16,12 @@ spec:
       name: 'app-{{name}}'
     spec:
       project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
       source:
         repoURL: https://github.com/maljac/k8-demo
         targetRevision: HEAD
