@@ -8,9 +8,9 @@ spec:
   - list:
       elements:
       - name: one
-        image: nginx:latest
+        image: nginx:1.23
       - name: two
-        image: httpd:alpine
+        image: nginx:1.24
   template:
     metadata:
       name: 'app-{{name}}'
