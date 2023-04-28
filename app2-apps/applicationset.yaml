@@ -10,7 +10,7 @@ spec:
       - name: one
         image: nginx:latest
       - name: two
-        image: nginx:latest
+        image: gcr.io/heptio-images/ks-guestbook-demo:0.2
   template:
     metadata:
       name: 'app-{{name}}'
