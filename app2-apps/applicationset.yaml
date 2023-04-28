@@ -31,10 +31,10 @@ spec:
         kustomize:
           commonAnnotations:
             app/param-host: 'apps-{{name}}.k8.odion.network'
-            images:
-              - name: nginx:latest
-                newName: nginx
-                newTag: '1.22'
+          images:
+            - name: nginx:latest
+              newName: nginx
+              newTag: '1.22'
 #          images:
 #            - '{{image}}'
       destination:
