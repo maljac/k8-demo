@@ -9,11 +9,11 @@ resources:
 replacements:
 - source:
     kind: Ingress
-    name: app1
+    name: app2
     fieldPath: metadata.annotations.app/param-host
   targets:
   - select:
       kind: Ingress
-      name: app1
+      name: app2
     fieldPaths:
       - spec.rules.0.host
