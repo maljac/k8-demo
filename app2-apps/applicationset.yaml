@@ -13,6 +13,8 @@ spec:
         image: nginx:1.24
       - name: three
         image: nginx:1.24
+      - name: four
+        image: nginx:1.22
   template:
     metadata:
       name: 'app-{{name}}'
