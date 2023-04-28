@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: apps
+  namespace: default
+spec:
+  generators:
+  - list:
+    elements:
+    - name: one
+      image: nginx:latest
+    - name: two
+      image: nginx:latest
+  template:
+    metadata:
+      name: 'app-{{name}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/maljac/k8-demo
+        targetRevision: HEAD
+        path: app1
+        kustomize:
+          commonAnnotations:
+            app/param-host: apps-{{name}}.k8.odion.network
+          images:
+           - '{{image}}'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: default
