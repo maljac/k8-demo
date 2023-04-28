@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/maljac/k8-demo
         targetRevision: HEAD
-        path: app1
+        path: app2
         kustomize:
           commonAnnotations:
             app/param-host: apps-{{name}}.k8.odion.network
