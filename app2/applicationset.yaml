@@ -6,11 +6,11 @@ metadata:
 spec:
   generators:
   - list:
-    elements:
-    - name: one
-      image: nginx:latest
-    - name: two
-      image: nginx:latest
+      elements:
+      - name: one
+        image: nginx:latest
+      - name: two
+        image: nginx:latest
   template:
     metadata:
       name: 'app-{{name}}'
