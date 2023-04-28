@@ -28,9 +28,9 @@ spec:
         path: app2
         kustomize:
           commonAnnotations:
-            app/param-host: apps-{{name}}.k8.odion.network
+            app/param-host: 'apps-{{name}}.k8.odion.network'
           images:
-           - '{{image}}'
+            - '{{image}}'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: default-{{name}}
